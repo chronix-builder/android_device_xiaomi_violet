@@ -16,11 +16,16 @@ TARGET_BOOT_ANIMATION_RES := 1080
 
 # Extra Stuffs
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_USES_MINI_GAPPS := true
 TARGET_ENABLE_BLUR := false
+WITH_GMS := true
+WITH_GAPPS := true
 
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/MiuiCamera/config.mk)
+
+#Rising
+RISING_MAINTAINER="Chronix"
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # Charging Animation
 TARGET_INCLUDE_PIXEL_CHARGER := true
@@ -34,5 +39,8 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="violet"
+    PRODUCT_BUILD_PROP_OVERRIDES += \
+    RISING_CHIPSET="Snapdragon 675" \
+    RISING_MAINTAINER="Chronix"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
